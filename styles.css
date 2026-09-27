@@ -537,6 +537,10 @@ footer small {
   }
   .steps article,
   .steps article + article {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 20px;
+    align-items: center;
     padding: 20px 0;
     border-right: 0;
     border-bottom: 1px solid rgba(243, 238, 227, 0.4);
@@ -546,11 +550,23 @@ footer small {
     border-bottom: 0;
   }
   .step-icon {
-    display: inline-block;
-    margin: 10px 20px 10px 0;
+    grid-column: 2;
+    grid-row: 2;
+    margin: 0;
+    line-height: 1;
   }
   .steps h3 {
-    display: inline-block;
+    grid-column: 1;
+    grid-row: 2;
+    margin: 12px 0;
+  }
+  .steps article > span {
+    grid-column: 1/-1;
+    grid-row: 1;
+  }
+  .steps p {
+    grid-column: 1/-1;
+    grid-row: 3;
   }
   .visit {
     display: flex;
