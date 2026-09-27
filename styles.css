@@ -443,7 +443,7 @@ footer small {
   letter-spacing: 0.08em;
   color: #a6a093;
 }
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .site-header {
     height: 70px;
     padding: 0 6vw;
@@ -595,7 +595,7 @@ footer small {
     font-size: 10px;
   }
 }
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .desktop-nav.is-open {
     display: flex;
     position: absolute;
@@ -658,24 +658,28 @@ footer small {
 .gallery-message em {
   color: var(--rust);
 }
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .photo-gallery {
     grid-template-columns: 1fr 1fr;
     min-height: 0;
+    gap: 12px;
+    padding: 12px;
   }
   .gallery-photo {
-    height: 260px;
+    height: clamp(190px, 55vw, 260px);
   }
   .gallery-message {
     grid-column: 1/-1;
     grid-row: 1;
-    padding: 54px 24px;
+    padding: 42px 24px;
+    background: var(--paper);
   }
   .gallery-tart {
     grid-column: 1;
   }
   .gallery-rolls {
     grid-column: 2;
+    background-image: url("imgs/geral/doce_02.webp");
   }
 }
 
@@ -1372,7 +1376,7 @@ html {
   white-space: nowrap;
   font-size: 14px;
 }
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .full-menu {
     display: block;
     margin-top: 72px;
@@ -1423,6 +1427,45 @@ html {
 }
 .about-image {
   min-height: 420px;
+  position: relative;
+}
+.about-stamp {
+  position: absolute;
+  right: -32px;
+  top: -28px;
+  z-index: 1;
+  display: grid;
+  width: 108px;
+  height: 108px;
+  place-content: center;
+  border: 1px solid #f3e4cc;
+  border-radius: 50%;
+  background: #4a2b1c;
+  box-shadow: 4px 4px 0 var(--paper);
+  color: #fdf4e5;
+  font: italic 21px / 0.78 var(--display);
+  text-align: center;
+  transform: rotate(-15deg);
+}
+.about-stamp b {
+  display: block;
+  margin-top: 10px;
+  font: 700 7px / 1.1 "DM Sans", sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+@media (max-width: 900px) {
+  .about-stamp {
+    right: -12px;
+    top: -14px;
+    width: 88px;
+    height: 88px;
+    font-size: 17px;
+  }
+  .about-stamp b {
+    margin-top: 8px;
+    font-size: 6px;
+  }
 }
 .visit-image {
   min-height: 500px;
@@ -1504,6 +1547,10 @@ html {
   -webkit-mask: url("imgs/geral/seta-diagonal.png") center/contain no-repeat;
   mask: url("imgs/geral/seta-diagonal.png") center/contain no-repeat;
 }
+.down-arrow {
+  -webkit-mask-image: url("imgs/geral/seta-para-baixo.png");
+  mask-image: url("imgs/geral/seta-para-baixo.png");
+}
 .footer-links .redirect-arrow {
   width: 14px;
   height: 14px;
@@ -1525,5 +1572,13 @@ html {
   }
   .visit-image {
     display: none;
+  }
+  .visit-details {
+    text-align: center;
+  }
+  .visit-copy > .button {
+    display: flex;
+    width: fit-content;
+    margin-inline: auto;
   }
 }
