@@ -443,6 +443,11 @@ footer small {
   letter-spacing: 0.08em;
   color: #a6a093;
 }
+@media (min-width: 901px) {
+  .footer-links {
+    align-items: flex-end;
+  }
+}
 @media (max-width: 900px) {
   .site-header {
     height: 70px;
